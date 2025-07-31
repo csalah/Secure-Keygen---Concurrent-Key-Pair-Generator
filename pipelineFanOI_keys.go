@@ -241,7 +241,6 @@ func main() {
 	for key := range keyGenerator(&wg, stop, takeN(&wg, stop, fanIn(&wg, stop, filterStreams), nKeys*2)) {
 
 		keys = append(keys, key)
-		//		   fmt.Printf("%v \n", key)
 	}
 	close(stop) // stopping the threads
 	wg.Wait()
